@@ -444,11 +444,11 @@ async def play(_, message: Message):
     global que
     global useer
     if message.chat.id in DISABLED_GROUPS:
-        return    
+        return 
+    await message.delete()   
     lel = await message.reply("🔄 **Sedang Memproses Lagu**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
-    await message.delete()
 
     try:
         user = await USER.get_me()
