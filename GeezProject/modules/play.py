@@ -32,6 +32,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
 from GeezProject.config import ARQ_API_KEY
+from GeezProject.config import SUDO_USERS
 from GeezProject.config import BOT_NAME as bn
 from GeezProject.config import DURATION_LIMIT
 from GeezProject.config import UPDATES_CHANNEL as updateschannel
@@ -224,9 +225,12 @@ async def settings(client, message):
 
 
 @Client.on_message(
-    filters.command("musicplayer") & ~filters.edited & ~filters.bot & ~filters.private
+    filters.command("musicplayer")
+    & filters.user(SUDO_USERS)
+    & ~filters.edited
+    & ~filters.bot
+    & ~filters.private
 )
-@authorized_users_only
 async def hfmm(_, message):
     global DISABLED_GROUPS
     try:
