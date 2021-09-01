@@ -32,12 +32,11 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from Python_ARQ import ARQ
 from youtube_search import YoutubeSearch
 from GeezProject.config import ARQ_API_KEY
-from GeezProject.config import SUDO_USERS
 from GeezProject.config import BOT_NAME as bn
 from GeezProject.config import DURATION_LIMIT
 from GeezProject.config import UPDATES_CHANNEL as updateschannel
 from GeezProject.config import que
-from GeezProject.config import SOURCE_CODE,ASSISTANT_NAME,PROJECT_NAME,SUPPORT_GROUP,BOT_USERNAME, OWNER
+from GeezProject.config import SOURCE_CODE, ASSISTANT_NAME, PROJECT_NAME, SUPPORT_GROUP, BOT_USERNAME, OWNER
 from GeezProject.function.admins import admins as a
 from GeezProject.helpers.admins import get_administrators
 from GeezProject.helpers.channelmusic import get_chat_id
@@ -53,10 +52,12 @@ from GeezProject.services.downloaders import youtube
 from GeezProject.services.queues import queues
 
 aiohttpsession = aiohttp.ClientSession()
-chat_id = None
 arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
-DISABLED_GROUPS = []
+chat_id = None
 useer ="NaN"
+DISABLED_GROUPS = []
+
+
 def cb_admin_check(func: Callable) -> Callable:
     async def decorator(client, cb):
         admemes = a.get(cb.message.chat.id)
@@ -225,13 +226,12 @@ async def settings(client, message):
 
 
 @Client.on_message(
-    filters.command("musicplayer")
-    & filters.user(SUDO_USERS)
+    command("musicplayer")
+    & filters.group
     & ~filters.edited
-    & ~filters.bot
-    & ~filters.private
 )
-async def hfmm(_, message):
+@authorized_users_only
+async def hfmm(_, message: Message):
     global DISABLED_GROUPS
     try:
         user_id = message.from_user.id
@@ -243,7 +243,6 @@ async def hfmm(_, message):
         )
         return
     status = message.text.split(None, 1)[1]
-    message.chat.id
     if status == "ON" or status == "on" or status == "On":
         lel = await message.reply("`Processing...`")
         if not message.chat.id in DISABLED_GROUPS:
@@ -267,8 +266,8 @@ async def hfmm(_, message):
     else:
         await message.reply_text(
             "**Saya hanya mengenali** `/musicplayer on` **dan** `/musicplayer off`"
-        )    
-        
+        )
+
 
 @Client.on_callback_query(filters.regex(pattern=r"^(playlist)$"))
 async def p_cb(b, cb):
@@ -447,9 +446,9 @@ async def m_cb(b, cb):
 async def play(_, message: Message):
     global que
     global useer
+    await message.delete()
     if message.chat.id in DISABLED_GROUPS:
         return 
-    await message.delete()   
     lel = await message.reply("🔄 **Sedang Memproses Lagu**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
