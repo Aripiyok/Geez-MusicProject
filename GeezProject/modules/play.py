@@ -183,9 +183,7 @@ def r_ply(type_):
                 InlineKeyboardButton("⏭", "skip"),
             ],
             [
-                InlineKeyboardButton("📖 Playlist", "playlist"),
-            ],
-            [InlineKeyboardButton("🗑 Close", "cls")],
+                InlineKeyboardButton("📖 Playlist", "playlist")],
         ]
     )
     return mar
@@ -226,7 +224,7 @@ async def settings(client, message):
 
 
 @Client.on_message(
-    command("musicplayer")
+    command("music")
     & filters.group
     & ~filters.edited
 )
@@ -239,7 +237,7 @@ async def hfmm(_, message: Message):
         return
     if len(message.command) != 2:
         await message.reply_text(
-            "**Saya hanya mengenali** `/musicplayer on` **dan** `/musicplayer off`"
+            "**Saya hanya mengenali** `/music on` **dan** `/music off`"
         )
         return
     status = message.text.split(None, 1)[1]
@@ -265,7 +263,7 @@ async def hfmm(_, message: Message):
         )
     else:
         await message.reply_text(
-            "**Saya hanya mengenali** `/musicplayer on` **dan** `/musicplayer off`"
+            "**Saya hanya mengenali** `/music on` **dan** `/music off`"
         )
 
 
@@ -401,9 +399,7 @@ async def m_cb(b, cb):
                     InlineKeyboardButton("⏭", "skip"),
                 ],
                 [
-                    InlineKeyboardButton("📖 Playlist", "playlist"),
-                ],
-                [InlineKeyboardButton("❌ Close", "cls")],
+                    InlineKeyboardButton("📖 Playlist", "playlist")],
             ]
         )
         await cb.message.edit(stats, reply_markup=marr)
@@ -582,9 +578,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("💀 Groups", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy")],
             ]
         )
         requested_by = message.from_user.first_name
@@ -660,9 +654,7 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton("💀 Groups", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy")],
             ]
         )
             requested_by = message.from_user.first_name
@@ -802,9 +794,7 @@ async def ytplay(_, message: Message):
             [
                 [
                     InlineKeyboardButton("💀 Groups", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy")],
             ]
         )
     requested_by = message.from_user.first_name
@@ -1035,9 +1025,7 @@ async def lol_cb(b, cb):
             [
                 [
                     InlineKeyboardButton("💀 Groups", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy")],
             ]
         )
     requested_by = useer_name
