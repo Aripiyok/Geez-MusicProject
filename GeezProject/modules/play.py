@@ -532,8 +532,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💀 Groups", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy")],
+                    InlineKeyboardButton("💀 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/zzonateman"),
+                    InlineKeyboardButton("🔥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/keluhkesahboy")],
             ]
         )
         file_name = get_file_name(audio)
@@ -568,7 +568,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas, Ketik `/help` bila butuh bantuan"
+                "**Lagu tidak ditemukan.** Jangan cari lagu yg aneh-aneh yah tod "
             )
             print(str(e))
             return
@@ -577,8 +577,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💀 Groups", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy")],
+                    InlineKeyboardButton("💀 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/zzonateman"),
+                    InlineKeyboardButton("🔥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/keluhkesahboy")],
             ]
         )
         requested_by = message.from_user.first_name
@@ -644,7 +644,7 @@ async def play(_, message: Message):
 
             except Exception as e:
                 await lel.edit(
-                "**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas, Ketik `/help` bila butuh bantuan"
+                "**Lagu tidak ditemukan.** Jangan cari lagu yg aneh-aneh yah tod"
             )
                 print(str(e))
                 return
@@ -653,8 +653,8 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💀 Groups", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy")],
+                    InlineKeyboardButton("💀 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/zzonateman"),
+                    InlineKeyboardButton("🔥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/keluhkesahboy")],
             ]
         )
             requested_by = message.from_user.first_name
@@ -784,7 +784,7 @@ async def ytplay(_, message: Message):
 
     except Exception as e:
         await lel.edit(
-            "**Lagu tidak ditemukan.** Coba cari dengan judul lagu yang lebih jelas, Ketik `/help` bila butuh bantuan"
+            "**Lagu tidak ditemukan.** Jangan cari lagu yg aneh-aneh yah tod"
         )
         print(str(e))
         return
@@ -793,8 +793,8 @@ async def ytplay(_, message: Message):
     keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💀 Groups", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy")],
+                    InlineKeyboardButton("💀 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/zzonateman"),
+                    InlineKeyboardButton("🔥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/keluhkesahboy")],
             ]
         )
     requested_by = message.from_user.first_name
@@ -1024,8 +1024,8 @@ async def lol_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💀 Groups", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 Channel", url="https://t.me/keluhkesahboy")],
+                    InlineKeyboardButton("💀 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/zzonateman"),
+                    InlineKeyboardButton("🔥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/keluhkesahboy")],
             ]
         )
     requested_by = useer_name
