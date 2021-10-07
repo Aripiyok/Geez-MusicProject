@@ -22,7 +22,7 @@ from GeezProject.config import SOURCE_CODE,ASSISTANT_NAME,PROJECT_NAME,SUPPORT_G
 logging.basicConfig(level=logging.INFO)
 
 @Client.on_message(
-    filters.command("start")
+    filters.command("s")
     & filters.private
     & ~ filters.edited
 )
@@ -88,73 +88,6 @@ def help_answer(client, callback_query):
     client.edit_message_text(chat_id=chat_id,    message_id=message_id,
         text=tr.HELP_MSG[msg],    reply_markup=InlineKeyboardMarkup(map(msg))
     )
-
-
-def map(pos):
-    if(pos==1):
-        button = [
-            [InlineKeyboardButton(text = 'Next »', callback_data = "help+2")]
-        ]
-    elif(pos==len(tr.HELP_MSG)-1):
-        url = f"https://t.me/{SUPPORT_GROUP}"
-        button = [
-            [InlineKeyboardButton("➕ Tambahkan saya ke Grup Anda ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-            [InlineKeyboardButton(text = '💬 Channel Updates', url=f"https://t.me/{UPDATES_CHANNEL}"),
-             InlineKeyboardButton(text = '🔰 Group Support', url=f"https://t.me/{SUPPORT_GROUP}")],
-            [InlineKeyboardButton(text = '🛠 Source Code 🛠', url=f"https://{SOURCE_CODE}")],
-            [InlineKeyboardButton(text = '«', callback_data = f"help+{pos-1}")]
-        ]
-    else:
-        button = [
-            [
-                InlineKeyboardButton(text = '«', callback_data = f"help+{pos-1}"),
-                InlineKeyboardButton(text = '»', callback_data = f"help+{pos+1}")
-            ],
-        ]
-    return button
-
-
-@Client.on_message(
-    filters.command("start")
-    & filters.group
-    & ~ filters.edited
-)
-async def start(client: Client, message: Message):
-    await message.reply_text(
-        "💁🏻‍♂️ **Apakah Anda ingin mencari Link YouTube?**",
-        reply_markup=InlineKeyboardMarkup(
-            [   
-                [    
-                    InlineKeyboardButton(
-                        "✅ Ya", switch_inline_query_current_chat=""
-                    ),
-                    InlineKeyboardButton(
-                        "❌ Tidak ", callback_data="close"
-                    )
-                ]
-            ]
-        )
-    )
-
-
-@Client.on_message(
-    filters.command("help")
-    & filters.group
-    & ~ filters.edited
-)
-async def help(client: Client, message: Message):
-    await message.reply_text(
-        """**Klik Tombol dibawah untuk Melihat Cara Menggunakan Bot**""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "📜 Cara Menggunakan BOT 📜", url="https://t.me/Vckyouuu/32"
-                    )
-                ]
-            ]
-        ),
-    )  
 
 
 @Client.on_message(
