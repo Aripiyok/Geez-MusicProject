@@ -230,7 +230,6 @@ async def settings(client, message):
 )
 @authorized_users_only
 async def hfmm(_, message: Message):
-        await message.delete()
     global DISABLED_GROUPS
     try:
         user_id = message.from_user.id
