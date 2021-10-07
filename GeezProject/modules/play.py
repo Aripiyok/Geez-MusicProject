@@ -226,10 +226,11 @@ async def settings(client, message):
 @Client.on_message(
     command("music")
     & filters.group
-    & ~filters.edited
+    & ~filters.edited      
 )
 @authorized_users_only
 async def hfmm(_, message: Message):
+        await message.delete()
     global DISABLED_GROUPS
     try:
         user_id = message.from_user.id
@@ -237,6 +238,7 @@ async def hfmm(_, message: Message):
         return
     if len(message.command) != 2:
         await message.reply_text(
+        await message.delete()
             "**Saya hanya mengenali** `/music on` **dan** `/music off`"
         )
         return
