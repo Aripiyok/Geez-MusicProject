@@ -101,10 +101,10 @@ async def reload(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "⚡Group Support⚡", url=f"https://t.me/zzonateman"
+                        "Group Support", url=f"https://t.me/temanmutuallan"
                     ),
                     InlineKeyboardButton(
-                        "🔥Created By🔥", url=f"https://t.me/fl0werboy"
+                        "Created By", url=f"https://t.me/fl0werboy"
                     )
                 ]
             ]
