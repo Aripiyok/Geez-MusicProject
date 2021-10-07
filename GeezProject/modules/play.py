@@ -229,7 +229,10 @@ async def settings(client, message):
     & ~filters.edited      
 )
 @authorized_users_only
-async def hfmm(_, message: Message):
+async def music(_, message: Message):
+    global que
+    global useer
+    await message.delete()
     global DISABLED_GROUPS
     try:
         user_id = message.from_user.id
