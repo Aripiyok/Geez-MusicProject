@@ -236,8 +236,8 @@ async def hfmm(_, message: Message):
     except:
         return
     if len(message.command) != 2:
-        await message.reply_text(
         await message.delete()
+        await message.reply_text(
             "**Saya hanya mengenali** `/music on` **dan** `/music off`"
         )
         return
