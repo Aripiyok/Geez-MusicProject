@@ -536,8 +536,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💀 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/keluhkesahboy")],
+                    InlineKeyboardButton("💀 ɢʀᴏᴜᴘ", url="https://t.me/temanmutuallan"),
+                    InlineKeyboardButton("🔥 ᴄʜᴀɴɴᴇʟ", url="https://t.me/keluhkesahboy")],
             ]
         )
         file_name = get_file_name(audio)
@@ -581,8 +581,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💀 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/keluhkesahboy")],
+                    InlineKeyboardButton("💀 ɢʀᴏᴜᴘ", url="https://t.me/temanmutuallan"),
+                    InlineKeyboardButton("🔥 ᴄʜᴀɴɴᴇʟ", url="https://t.me/keluhkesahboy")],
             ]
         )
         requested_by = message.from_user.first_name
@@ -610,7 +610,7 @@ async def play(_, message: Message):
             while j < 5:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:25]}](https://youtube.com{results[j]['url_suffix']})\n"
                 toxxt += f" ├ ⚡ **Duration** - {results[j]['duration']}\n"
-                toxxt += f" └ ⚜️ __Music bot only @temanmutuallan__\n\n"
+                toxxt += f" └ ⚜️ __Managed bye @fl0werboy__\n\n"
 
                 j += 1            
             koyboard = InlineKeyboardMarkup(
@@ -657,8 +657,8 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💀 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/keluhkesahboy")],
+                    InlineKeyboardButton("💀 ɢʀᴏᴜᴘ", url="https://t.me/temanmutuallan"),
+                    InlineKeyboardButton("🔥 ᴄʜᴀɴɴᴇʟ", url="https://t.me/keluhkesahboy")],
             ]
         )
             requested_by = message.from_user.first_name
@@ -675,7 +675,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption = f"⚜️ **Judul:** [{title[:30]}]({url})\n⏱ **Durasi:** {duration}\n⚜️ **Status:** Antrian Ke `{position}`\n" \
+            caption = f"⚜️ **Judul:** [{title[:30]}]({url})\n⚜️ **Durasi:** {duration}\n⚜️ **Status:** Antrian Ke `{position}`\n" \
                     + f"⚜️ **Request Dari:** {message.from_user.mention}",
                    reply_markup=keyboard)
        
@@ -695,7 +695,7 @@ async def play(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"⚜️ **Judul:** [{title[:30]}]({url})\n⏱ **Durasi:** {duration}\n⚜️ **Status:** Sedang Memutar\n" \
+            caption = f"⚜️ **Judul:** [{title[:30]}]({url})\n⚜️ **Durasi:** {duration}\n⚜️ **Status:** Sedang Memutar\n" \
                     + f"⚜️ **Request Dari:** {message.from_user.mention}",
                    reply_markup=keyboard)
 
@@ -797,8 +797,8 @@ async def ytplay(_, message: Message):
     keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💀 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/keluhkesahboy")],
+                    InlineKeyboardButton("💀 ɢʀᴏᴜᴘ", url="https://t.me/temanmutuallan"),
+                    InlineKeyboardButton("🔥 ᴄʜᴀɴɴᴇʟ", url="https://t.me/keluhkesahboy")],
             ]
         )
     requested_by = message.from_user.first_name
@@ -815,7 +815,7 @@ async def ytplay(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption = f"⚜️ **Judul:** [{title[:30]}]({url})\n⏱ **Durasi:** {duration}\n⚜️ **Status:** Antrian Ke `{position}`\n" \
+            caption = f"⚜️ **Judul:** [{title[:30]}]({url})\n⚜️ **Durasi:** {duration}\n⚜️ **Status:** Antrian Ke `{position}`\n" \
                     + f"⚜️ **Request Dari:** {message.from_user.mention}",
                    reply_markup=keyboard,
         )
@@ -837,7 +837,7 @@ async def ytplay(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"⚜️ **Judul:** [{title[:30]}]({url})\n⏱ **Durasi:** {duration}\n⚜️ **Status:** Sedang Memutar\n" \
+            caption = f"⚜️ **Judul:** [{title[:30]}]({url})\n⚜️ **Durasi:** {duration}\n⚜️ **Status:** Sedang Memutar\n" \
                     + f"⚜️ **Request Dari:** {message.from_user.mention}",
                    reply_markup=keyboard,)
         os.remove("final.png")
@@ -1028,8 +1028,8 @@ async def lol_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("💀 𝐆𝐫𝐨𝐮𝐩", url="https://t.me/zzonateman"),
-                    InlineKeyboardButton("🔥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥", url="https://t.me/keluhkesahboy")],
+                    InlineKeyboardButton("💀 ɢʀᴏᴜᴘ", url="https://t.me/temanmutuallan"),
+                    InlineKeyboardButton("🔥 ᴄʜᴀɴɴᴇʟ", url="https://t.me/keluhkesahboy")],
             ]
         )
     requested_by = useer_name
@@ -1049,7 +1049,7 @@ async def lol_cb(b, cb):
         await cb.message.delete()
         await b.send_photo(chat_id,
             photo="final.png",
-            caption = f"⚜️ **Judul:** [{title[:30]}]({url})\n⏱ **Durasi:** {duration}\n⚜️ **Status:** Antrian Ke `{position}`\n" \
+            caption = f"⚜️ **Judul:** [{title[:30]}]({url})\n⚜️ **Durasi:** {duration}\n⚜️ **Status:** Antrian Ke `{position}`\n" \
                     + f"⚜️ **Request Dari:** {r_by.mention}",
                    reply_markup=keyboard,
         )
